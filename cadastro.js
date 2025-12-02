@@ -13,3 +13,13 @@ inserir.addEventListener("click", () => {
   
   })
 })
+
+remover.addEventListener("click", () => {
+  ideias.pop();
+  lista.innerHTML = "";
+  ideias.forEach(e => {
+  lista.innerHTML += `<li> ${e} </li>`
+  
+  })
+
+})
