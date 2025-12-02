@@ -10,7 +10,7 @@ inserir.addEventListener("click", () => {
   lista.innerHTML = "";
   ideias.forEach(e => {
   lista.innerHTML += `<li> ${e} </li>`
-  
+  ideia.value = "";
   })
 })
 
