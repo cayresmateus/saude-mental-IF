@@ -2,3 +2,13 @@
     text-decoration: none;
     color: #000;
 }
+
+.error-message {
+    color: #d9534f;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+}
+input:invalid, textarea:invalid, select:invalid {
+    border-color: #d9534f;
+}
