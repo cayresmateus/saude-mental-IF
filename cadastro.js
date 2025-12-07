@@ -88,7 +88,7 @@ function validarFormulario(){
     return false
   }
 
-alert("cadastro realizado com sucesso")
+alert("mensagem enviada com sucesso")
 return true;
 }
 
