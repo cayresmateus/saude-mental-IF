@@ -88,8 +88,38 @@ function validarFormulario(){
     return false
   }
 
-alert("mensagem enviada com sucesso")
-return true;
+  
+  // alert("mensagem enviada com sucesso")
+  salvarContato(inputNome.value, inputEmail.value, inputContato.value, inputMensagem.value);
+  return true;
+}
+
+function salvarContato(nome, email, contato, mensagem){
+  fetch('https://httpbin.org/post', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      nome,
+      email,
+      contato,
+      mensagem
+    }),
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Erro http! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('contato salvo:', data);
+    alert('dados enviados com sucesso');
+  })
+  .catch(error => {
+    console.error('Erro ao salvar contato:', error);
+  });
 }
 
 const lidaTelefone = (event) => {
